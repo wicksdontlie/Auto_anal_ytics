@@ -50,7 +50,7 @@ if st.button("Run analysis"):
         # First try deterministic conversion
         code = prompt_to_code(final_prompt, df)
         if code:
-            res = run_code(df, code)
+            
         else:
             # No deterministic code found. If user requested LLM, send the prompt.
             if use_llm:
@@ -71,7 +71,7 @@ if st.button("Run analysis"):
                 if "```python" in llm_out:
                     try:
                         code = llm_out.split("```python")[1].split("```")[0]
-                        res = run_code(df, code)
+                        res = run_code(code, df)
                     except Exception as e:
                         st.error(f"Failed to execute code from LLM: {e}")
                         st.write(llm_out)
