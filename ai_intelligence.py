@@ -1,5 +1,4 @@
-import streamlit as st
-from analyst import load_data, suggest_prompts, prompt_to_code, run_code, ask_llm
+
 import pandas as pd
 
 st.set_page_config(page_title="Personal AI Data Analyst", layout="wide")
