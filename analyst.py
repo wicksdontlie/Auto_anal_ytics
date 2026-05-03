@@ -50,7 +50,7 @@ if st.button("Run analysis"):
         # First try deterministic conversion
         code = prompt_to_code(final_prompt, df)
         if code:
-            
+            res = run_code(code, df)
         else:
             # No deterministic code found. If user requested LLM, send the prompt.
             if use_llm:
